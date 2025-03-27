@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+.heading-text {
+  font-family: "Playfair Display", serif;
+}
+
+.options-text {
+  font-family: "Courier Prime", monospace;
+}
