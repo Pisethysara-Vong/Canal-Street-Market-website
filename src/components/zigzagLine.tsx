@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const ZigzagLine = () => {
   return (
-    <div className="border-2 border-red-600 mt-3 w-full md:h-12 h-6 overflow-hidden">
+    <div className="w-full md:h-12 h-6 overflow-hidden">
       <motion.svg
         width="100%"
         height="100%"
@@ -14,7 +14,7 @@ const ZigzagLine = () => {
           animate={{ x: ["-50%", "0%"] }}
           transition={{
             ease: "linear",
-            duration: 24,
+            duration: 22,
             repeat: Infinity,
           }}
         >
@@ -30,7 +30,7 @@ const ZigzagLine = () => {
                L 350 0 L 360 100 L 370 0 L 380 100 L 390 0 
                L 400 100"
             stroke="black"
-            strokeWidth="1"
+            strokeWidth="0.3"
             fill="transparent"
             strokeLinejoin="miter"
             strokeLinecap="butt"
@@ -47,7 +47,7 @@ const ZigzagLine = () => {
                L 750 0 L 760 100 L 770 0 L 780 100 L 790 0 
                L 800 100"
             stroke="black"
-            strokeWidth="1"
+            strokeWidth="0.3"
             fill="transparent"
             strokeLinejoin="miter"
             strokeLinecap="butt"

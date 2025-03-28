@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png';
+import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview.png'
 import image from '../assets/header.png';
 import {motion} from 'framer-motion';
 
@@ -6,8 +6,8 @@ const Header = () => {
     return (
         <div>
             <motion.img
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
             viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
             transition={{ duration: 0.5, ease: "easeOut" }}
             className='w-16 mb-32' src={logo} />
