@@ -1,15 +1,14 @@
 import { motion, Variants } from 'framer-motion';
 import ZigzagLine from "./zigzagLine"
-import smileyFace from '../assets/happy-face.png'
 
-const FoodBestSection = () => {
+const FoodBestSection = ({image} : {image: string}) => {
     const iconVariants = (start: number, end: number): Variants => ({
         initial: { y: start },
         animate: {
             y: [end, start],
             transition: {
-            duration: 1.5, // Use dynamic duration
-            ease: "linear",
+            duration: 1, // Use dynamic duration
+            ease: "easeInOut",
             repeat: Infinity,
             repeatType: "reverse",
             },
@@ -23,7 +22,7 @@ const FoodBestSection = () => {
             variants={iconVariants(-20, 20)}
             initial="initial"
             animate="animate" className='text-center lg:w-48 md:w-28 w-16'>
-                <img src={smileyFace} alt="" />
+                <img src={image} alt="" />
             </motion.div>
             <div className="lg:w-[42%] flex flex-col lg:gap-8 gap-4 items-center justify-center">
                 <p className="w-1/2 lg:text-8xl text-6xl text-center heading-text">The Best of NYC</p>
@@ -33,7 +32,7 @@ const FoodBestSection = () => {
             variants={iconVariants(20, -20)}
             initial="initial"
             animate="animate" className="text-center lg:w-48 md:w-28 w-16">
-                <img src={smileyFace} alt="" />
+                <img src={image} alt="" />
                 
             </motion.div>
         </div>
