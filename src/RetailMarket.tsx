@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import FoodHeader from "./components/foodHeader";
-import FoodSelection from "./components/foodSelection";
 import FoodBestSection from "./components/foodBestSection";
 import Footer from "./components/footer";
 import rose from "./assets/2a2acabb846f52811a8a44ae9e1a2f66-removebg-preview.png"
