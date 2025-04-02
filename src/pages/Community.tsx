@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import CommunityHeader from "./components/communityHeader";
-import Footer from "./components/footer";
-import MarketEvents from "./components/marketEvents";
-import Features from "./components/features";
+import CommunityHeader from "../components/communityHeader";
+import Footer from "../components/footer";
+import MarketEvents from "../components/marketEvents";
+import Features from "../components/features";
+import MarketRadio from "../components/marketRadio";
 
 
 
@@ -15,6 +16,7 @@ function Community() {
             <CommunityHeader details="Our mixed-use space hosts ongoing events, podcasts & artists in residence" title="Canal St. Community" />
             <MarketEvents />
             <Features />
+            <MarketRadio />
             <Footer />
         </div>
         

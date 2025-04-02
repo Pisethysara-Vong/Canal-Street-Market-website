@@ -1,16 +1,31 @@
 import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview.png'
 import image from '../assets/header.png';
+import sidebar from '../assets/sidebar menu.png';
+
 import {motion} from 'framer-motion';
 
 const Header = () => {
+    const handleClick = (url: string) => {
+        window.location.href = url;
+    };
     return (
         <div>
-            <motion.img
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
-            viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className='w-16 mb-32' src={logo} />
+            <div className='mb-32 flex justify-between items-center'>
+                <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1}}
+                viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className='w-16' src={logo} />
+                <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1}}
+                viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                onClick={() => handleClick("/menu")}
+                className='w-16 hover:bg-neutral-300 rounded-[5px] duration-150 ease-out cursor-pointer' src={sidebar} />
+            </div>
+            
             <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}

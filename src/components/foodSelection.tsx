@@ -11,7 +11,7 @@ const FoodSelection = () => {
     };
 
     return (
-        <div className="lg:grid grid-cols-3 flex flex-col md:gap-12 gap-4 lg:mt-20 lg:mb-16 mb-8 mt-8 border-2">
+        <div className="lg:grid grid-cols-3 flex flex-col md:gap-12 gap-4 lg:mt-20 lg:mb-16 mb-8 mt-8">
         {renderFoodItems()}
         </div>
     );

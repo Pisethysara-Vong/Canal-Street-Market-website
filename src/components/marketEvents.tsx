@@ -1,6 +1,9 @@
 import DiagonalLinesComponent from "./diagonalLine"
 
 const MarketEvents = () => {
+    const handleClick = (url: string) => {
+        window.open(url, "_blank");
+    };
   return (
     <div className="w-full border-2 border-green-400">
       <div className="border-2 border-blue-600 flex md:flex-row flex-col justify-between md:gap-4 lg:mt-32 mt-16">
@@ -46,7 +49,7 @@ const MarketEvents = () => {
             </div>
         </div>
       </div>
-      <div className="w-full border-2 border-black md:text-[16px] text-[15px] py-4 md:mt-8 mt-6 text-center hover:bg-black hover:text-white duration-250 ease-out cursor-pointer options-text">
+      <div onClick={() => handleClick("https://canalstreet.market/community/event/")} className="w-full border-2 border-black md:text-[16px] text-[15px] py-4 md:mt-8 mt-6 text-center hover:bg-black hover:text-white duration-250 ease-out cursor-pointer options-text">
         <button>View all</button>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Options = () => {
           viewport={{ once: true, amount: 0.3 }} // `once: true` ensures it only triggers once
           transition={{ duration: 1, ease: "easeOut"}}
           className='w-full md:h-120 h-130'><img className='w-full h-full object-cover' src={image} alt="" /></motion.div>
-          <div className='w-full text-justify mt-8 lg:text-xl tracking-normal options-text'>
+          <div className='w-full text-justify mt-8 md:text-[18px] text-[15px] tracking-normal options-text'>
             Merging retail, food, art, and culture, Canal Street Market highlights top retail and design concepts, restaurants, and up-and-coming players in the downtown New York City community.
           </div>
         </div>
@@ -25,7 +25,7 @@ const Options = () => {
         transition={{ duration: 1, ease: "easeOut"}}
         className='w-full md:w-1/3 flex flex-col justify-start items-center mb-8 md:mb-0'>
           <div className='w-full md:h-120 h-130'><img className='w-full h-full object-cover' src={image2} alt="" /></div>
-          <div className='w-full text-justify mt-8 lg:text-xl tracking-normal options-text'>
+          <div className='w-full text-justify mt-8 md:text-[18px] text-[15px] tracking-normal options-text'>
           Retail Market Hours:
           Thursday – Sun: 11:00AM - 7:00PM
           </div>
@@ -37,7 +37,7 @@ const Options = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className='w-full md:w-1/3 flex flex-col justify-start items-center'>
           <div className='w-full md:h-120 h-130'><img className='w-full h-full object-cover' src={image3} alt="" /></div>
-          <div className='w-full text-justify mt-8 lg:text-xl tracking-normal options-text'>
+          <div className='w-full text-justify mt-8 md:text-[18px] text-[15px] tracking-normal options-text'>
           Food Hall Hours:
           Mon – Sun: 11:00AM - 8:00PM
           </div>

@@ -1,18 +1,28 @@
+import classNames from 'classnames';
 import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview.png'
+import sidebar from '../assets/sidebar menu.png';
+
 
 interface FoodHeaderProps {
     hours: string;
     schedule: string;
     title: string;
     image: string;
+    bgHover: string
 }
 
-const FoodHeader = ({ hours, schedule, title, image }: FoodHeaderProps) => {
+const FoodHeader = ({ hours, schedule, title, image, bgHover }: FoodHeaderProps) => {
+    const handleClick = (url: string) => {
+        window.location.href = url;
+    };
   return (
     <div>
         <div className='flex justify-between items-center'>
             <div className='w-16'>
                 <img src={logo} alt="Logo" />
+            </div>
+            <div onClick={() => handleClick("/menu")} className={classNames("w-16 rounded-[5px] duration-150 ease-out cursor-pointer", bgHover)}>
+                <img src={sidebar} alt="sidebar" />
             </div>
         </div>
         <div className='text-right options-text mt-8'>

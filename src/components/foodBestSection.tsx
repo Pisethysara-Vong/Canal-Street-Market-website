@@ -1,7 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import ZigzagLine from "./zigzagLine"
 
-const FoodBestSection = ({image} : {image: string}) => {
+const FoodBestSection = ({image, title, subtitle} : {image: string, title: string, subtitle: string}) => {
     const iconVariants = (start: number, end: number): Variants => ({
         initial: { y: start },
         animate: {
@@ -25,8 +25,8 @@ const FoodBestSection = ({image} : {image: string}) => {
                 <img src={image} alt="" />
             </motion.div>
             <div className="lg:w-[42%] flex flex-col lg:gap-8 gap-4 items-center justify-center">
-                <p className="w-1/2 lg:text-8xl text-6xl text-center heading-text">The Best of NYC</p>
-                <p className="options-text">All under one roof!</p>
+                <p className="w-1/2 lg:text-8xl text-7xl text-center heading-text">{title}</p>
+                <p className="options-text">{subtitle}</p>
             </div>
             <motion.div
             variants={iconVariants(20, -20)}
