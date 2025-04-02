@@ -2,6 +2,7 @@ import { div } from 'framer-motion/client';
 import React from 'react';
 import sidebar from '../assets/sidebar menu.png';
 import exit from '../assets/exit menu.png'
+import { motion } from 'framer-motion';
 
 const MenuOptions = () => {
     const handleClick = (url: string) => {
@@ -16,10 +17,33 @@ const MenuOptions = () => {
             <img src={exit} alt="Logo" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 h-full relative z-0">
-            <div onClick={() => handleClick("/about")} className="bg-neutral-200 h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">About</div>
-            <div onClick={() => handleClick("/food")} className="bg-[#5ea3ec] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Food</div>
-            <div onClick={() => handleClick("/retail")} className="bg-[#f64444] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Retail</div>
-            <div onClick={() => handleClick("/community")} className="bg-[#ffb400] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Community</div>
+            <motion.div onClick={() => handleClick("/about")}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
+            transition={{ duration: 0.5, ease: "easeIn"}}
+            className="bg-neutral-200 h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">About</motion.div>
+            
+            <motion.div onClick={() => handleClick("/food")}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
+            transition={{ duration: 0.5, ease: "easeIn", delay: 0.2 }}
+            className="bg-[#5ea3ec] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Food</motion.div>
+            
+            <motion.div onClick={() => handleClick("/retail")}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
+            transition={{ duration: 0.5, ease: "easeIn", delay: 0.4 }}
+            className="bg-[#f64444] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Retail</motion.div>
+            
+            <motion.div onClick={() => handleClick("/community")}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
+            transition={{ duration: 0.5, ease: "easeIn", delay: 0.5 }}
+            className="bg-[#ffb400] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Community</motion.div>
         </div>
     </div>
   );

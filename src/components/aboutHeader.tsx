@@ -30,7 +30,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}
             viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
             className='lg:text-7xl text-4xl mt-48 lg:w-4/5 md:text-justify tracking-normal heading-text'>
                 Canal Street Market is a carefully curate retail market, food hall & community space open year-round at 265 Canal Street. Support <span className='underline decoration-dashed'>Small Business</span> this weekend!
             </motion.div>
