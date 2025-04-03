@@ -1,6 +1,3 @@
-import { div } from 'framer-motion/client';
-import React from 'react';
-import sidebar from '../assets/sidebar menu.png';
 import exit from '../assets/exit menu.png'
 import { motion } from 'framer-motion';
 
@@ -21,28 +18,28 @@ const MenuOptions = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
-            transition={{ duration: 0.2, ease: "easeIn"}}
+            transition={{ duration: 0.1, ease: "easeIn"}}
             className="bg-neutral-200 h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">About</motion.div>
             
             <motion.div onClick={() => handleClick("/food")}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
-            transition={{ duration: 0.2, ease: "easeIn", delay: 0.2 }}
+            transition={{ duration: 0.1, ease: "easeIn", delay: 0.1 }}
             className="bg-[#5ea3ec] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Food</motion.div>
             
             <motion.div onClick={() => handleClick("/retail")}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
-            transition={{ duration: 0.2, ease: "easeIn", delay: 0.4 }}
+            transition={{ duration: 0.1, ease: "easeIn", delay: 0.2 }}
             className="bg-[#f64444] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Retail</motion.div>
             
             <motion.div onClick={() => handleClick("/community")}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
-            transition={{ duration: 0.2, ease: "easeIn", delay: 0.5 }}
+            transition={{ duration: 0.1, ease: "easeIn", delay: 0.3 }}
             className="bg-[#ffb400] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Community</motion.div>
         </div>
     </div>

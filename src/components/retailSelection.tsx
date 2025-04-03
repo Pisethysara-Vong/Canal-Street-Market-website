@@ -1,18 +1,66 @@
+import { motion } from "framer-motion";
 import { retailItems } from "../constants/foodAndRetail";
+import { useState, useEffect } from "react";
 
 const RetailSelection = () => {
-    const renderRetailItems = () => {
-        return retailItems.map((shop, index) => (
-        <div key={index} className="flex flex-col gap-4">
-            <div className="options-text md:text-xl">{shop.category}</div>
-            <div className="heading-text md:text-4xl text-2xl">{shop.name}</div>
-        </div>
-        ));
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [isHoverEnabled, setIsHoverEnabled] = useState<boolean>(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsHoverEnabled(window.innerWidth >= 768); // Disable hover if width < 768px (md breakpoint)
+        };
+
+        handleResize(); // Check on mount
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const handleMouseEnter = (index: number) => {
+        if (isHoverEnabled) setHoveredIndex(index);
     };
 
+    const handleMouseLeave = () => {
+        if (isHoverEnabled) setHoveredIndex(null);
+    };
+
+    const getImagePosition = () => {
+        if (hoveredIndex === null) return "";
+        const column = hoveredIndex % 3;
+        if (column === 0) return "left-0 transform translate-x-0";
+        if (column === 1) return "left-1/2 transform -translate-x-1/2";
+        return "right-0 transform translate-x-0";
+    };
+
+    const image = (img: string) => (
+        <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            src={img}
+            alt="Food Item"
+            className={`absolute lg:w-[25%] w-[45%] top-1/2 -translate-y-1/2 pointer-events-none ${getImagePosition()}`}
+        />
+    );
+    
+
     return (
-        <div className="lg:grid grid-cols-3 flex flex-col md:gap-24 gap-8 lg:mt-26 lg:mb-26 mb-18 mt-18">
-        {renderRetailItems()}
+        <div className="relative md:grid grid-cols-3 flex flex-col md:gap-24 gap-4 lg:mt-26 lg:mb-26 mb-18 mt-18 z-0">
+            {/* Conditionally rendered image */}
+            {isHoverEnabled && hoveredIndex !== null && image(retailItems[hoveredIndex].image)}
+
+            {/* Food Items */}
+            {retailItems.map((shop, index) => (
+                <div
+                    key={index}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    className="flex flex-col gap-4 relative z-10 cursor-pointer"
+                >
+                    <div className="options-text md:text-xl relative">{shop.category}</div>
+                    <div className="heading-text md:text-4xl text-2xl relative">{shop.name}</div>
+                </div>
+            ))}
         </div>
     );
     };
