@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview.png'
+import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview copy.png'
 import sidebar from '../assets/sidebar menu.png';
 import { delay, motion } from 'framer-motion';
 
@@ -23,8 +23,8 @@ const FoodHeader = ({ hours, schedule, title, image, bgHover }: FoodHeaderProps)
         whileInView={{ opacity: 1}}
         viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className='flex justify-between items-center'>
-            <div className='w-16'>
+        className='flex justify-between items-center fixed w-full lg:pr-28 pr-16 '>
+            <div onClick={() => handleClick("/about")} className='w-16 cursor-pointer'>
                 <img src={logo} alt="Logo" />
             </div>
             <div onClick={() => handleClick("/menu")} className={classNames("w-16 rounded-[5px] duration-150 ease-out cursor-pointer", bgHover)}>
@@ -36,7 +36,7 @@ const FoodHeader = ({ hours, schedule, title, image, bgHover }: FoodHeaderProps)
         whileInView={{ opacity: 1, x: 0}}
         viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className='text-right options-text mt-8'>
+        className='text-right options-text mt-26'>
             <p>{hours}</p>
             <p>{schedule}</p>
             

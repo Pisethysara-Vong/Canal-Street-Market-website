@@ -1,7 +1,7 @@
 import { motion, Variants } from 'framer-motion';
 import ZigzagLine from "./zigzagLine"
 
-const FoodBestSection = ({image, title, subtitle} : {image: string, title: string, subtitle: string}) => {
+const FoodBestSection = ({image1, image2, title, subtitle} : {image1: string, image2: string, title: string, subtitle: string}) => {
     const iconVariants = (start: number, end: number): Variants => ({
         initial: { y: start },
         animate: {
@@ -22,7 +22,7 @@ const FoodBestSection = ({image, title, subtitle} : {image: string, title: strin
             variants={iconVariants(-20, 20)}
             initial="initial"
             animate="animate" className='text-center lg:w-48 md:w-28 w-16'>
-                <img src={image} alt="" />
+                <img src={image1} alt="" />
             </motion.div>
             <div className="lg:w-[42%] flex flex-col lg:gap-8 gap-4 items-center justify-center">
                 <p className="w-1/2 lg:text-8xl text-7xl text-center heading-text">{title}</p>
@@ -32,7 +32,7 @@ const FoodBestSection = ({image, title, subtitle} : {image: string, title: strin
             variants={iconVariants(20, -20)}
             initial="initial"
             animate="animate" className="text-center lg:w-48 md:w-28 w-16">
-                <img src={image} alt="" />
+                <img src={image2} alt="" />
                 
             </motion.div>
         </div>

@@ -16,7 +16,7 @@ function Food() {
         <div className='flex flex-col w-full bg-[#5ea3ec] px-8 py-8 lg:px-14 lg:py-14'>
             <FoodHeader hours="Food Hall Hours:" schedule="Mon - Sun: 11:00AM - 8:00PM" title="The Food Hall" image={food} bgHover='hover:bg-[rgb(75,140,186)]' />
             <FoodSelection />
-            <FoodBestSection image={smileyFace} title="The Best of NYC" subtitle="All under one roof!" />
+            <FoodBestSection image1={smileyFace} image2={smileyFace} title="The Best of NYC" subtitle="All under one roof!" />
             <Footer />
         </div>
         

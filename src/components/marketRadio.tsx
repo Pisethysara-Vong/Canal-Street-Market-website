@@ -1,8 +1,6 @@
-import FoodBestSection from './foodBestSection'
 import head from '../assets/image-removebg-preview.png'
-import AboutEvents from './aboutEvents'
+import headMirror from '../assets/image-removebg-preview mirror.png'
 import { motion, Variants } from 'framer-motion'
-import { image, title } from 'framer-motion/client'
 import ZigzagLine from './zigzagLine'
 import DashedLine from './dashedLine'
 
@@ -40,13 +38,13 @@ const MarketRadio = () => {
             variants={iconVariants(20, -20)}
             initial="initial"
             animate="animate" className="text-center lg:w-48 md:w-28 w-16">
-                <img src={head} alt="" />
+                <img src={headMirror} alt="" />
             </motion.div>
         </div>
         <div className="flex flex-col justify-start items-center">
             {DashedLine(100, 0)}
             {DashedLine(100, 0)}
-            <div className="border-2 border-red-500 flex flex-col md:flex-row w-full md:justify-between gap-4 md:m-12 m-4 md:text-[18px] text-[15px] tracking-normal options-text">
+            <div className="flex flex-col md:flex-row w-full md:justify-between gap-4 md:m-12 m-4 md:text-[18px] text-[15px] tracking-normal options-text">
                 <div onClick={() => handleClick("https://soundcloud.com/asiannotasian")} className="flex flex-col md:w-1/3 justify-start items-center gap-4 md:border-none border-b-2 border-dashed border-black p-4 cursor-pointer">
                     <div className='text-[15px]'>04/01</div>
                     <div className='text-center'>S5E3 - Are We Too Old For This Shit?</div>
