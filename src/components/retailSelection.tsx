@@ -11,7 +11,7 @@ const RetailSelection = () => {
     };
 
     return (
-        <div className="lg:grid grid-cols-3 flex flex-col md:gap-12 gap-8 lg:mt-20 lg:mb-16 mb-8 mt-8">
+        <div className="lg:grid grid-cols-3 flex flex-col md:gap-24 gap-8 lg:mt-26 lg:mb-26 mb-18 mt-18">
         {renderRetailItems()}
         </div>
     );

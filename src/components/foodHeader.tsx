@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import logo from '../assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview copy.png'
 import sidebar from '../assets/sidebar menu.png';
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 interface FoodHeaderProps {
