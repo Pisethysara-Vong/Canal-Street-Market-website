@@ -43,9 +43,12 @@ const RetailSelection = () => {
         />
     );
     
+    const handleClick = (url: string) => {
+        window.open(url, "_blank");
+    };
 
     return (
-        <div className="relative md:grid grid-cols-3 flex flex-col md:gap-24 gap-4 lg:mt-26 lg:mb-26 mb-18 mt-18 z-0">
+        <div onClick={() => hoveredIndex !== null && handleClick(retailItems[hoveredIndex].url)} className="relative md:grid grid-cols-3 flex flex-col md:gap-24 gap-4 lg:mt-26 lg:mb-26 mb-18 mt-18 z-0">
             {/* Conditionally rendered image */}
             {isHoverEnabled && hoveredIndex !== null && image(retailItems[hoveredIndex].image)}
 

@@ -28,47 +28,56 @@ export const foodItems = [
   {
     option: "Khao Man Gai",
     name: "Betong",
-    image: betong
+    image: betong,
+    url: "https://canalstreet.market/food/ilili-box/"
   },
   {
     option: "Coffee, Pastries & Smoothies",
     name: "Chinatown Deli",
-    image: chinatown
+    image: chinatown,
+    url: "https://canalstreet.market/food/chinatown-deli/"
   },
   {
     option: "Artisanal Chocolates",
     name: "Daniel Corpuz Chocolatier",
-    image: choco
+    image: choco,
+    url: "https://canalstreet.market/food/daniel-corpuz-chocolatier/"
   },
   {
     option: "Chinese Classics",
     name: "Joe's Rice and Noodles",
-    image: riceNoodles
+    image: riceNoodles,
+    url: "https://canalstreet.market/food/joes-rice-and-noodles/"
   },
   {
     option: "Cantonese Steamed Rice Rolls",
     name: "Joe's Steam Rice Roll",
-    image: riceNoodles
+    image: riceNoodles,
+    url: "https://canalstreet.market/food/joes-steam-rice-roll/"
   },
   {
     option: "Delicious Filipino Classics",
     name: "Kabisera",
-    image: kabisera
+    image: kabisera,
+    url: "https://canalstreet.market/food/kabisera/"
   },
   {
     option: "Bingsoo Sundaes & Bubble Tea",
     name: "Lazy Sundaes",
-    image: lazySunday
+    image: lazySunday,
+    url: "https://canalstreet.market/food/lazy-sundaes/"
   },
   {
     option: "Sushi, Handrolls & Chirashi",
     name: "Matsunori",
-    image: matsunori
+    image: matsunori,
+    url: "https://canalstreet.market/food/matsunori/"
   },
   {
     option: "Filipino Inspired Taqueria",
     name: "Mucho Sarap",
-    image: muchoSarap
+    image: muchoSarap,
+    url: "https://canalstreet.market/food/mucho-sarap/"
   }
 ];
 
@@ -77,90 +86,105 @@ export const retailItems = [
   {
     category: "Design Objects",
     name: "American Design Club",
-    image: americanClub
+    image: americanClub,
+    url: "https://canalstreet.market/retail/american-design-club/"
   },
   {
     category: "Jewelry",
     name: "Beeshaus & Raum NYC",
-    image: beeshaus
+    image: beeshaus,
+    url: "https://canalstreet.market/retail/beeshaus-raum/"
 
   },
   {
     category: "Jewelry",
     name: "Beroep Tech",
-    image: beroep
+    image: beroep,
+    url: "https://canalstreet.market/retail/bereop-tech/"
 
   },
   {
     category: "Bonsai Shop",
     name: "Dandy Farmer Bonsai Shop",
-    image: bonsai
+    image: bonsai,
+    url: "https://canalstreet.market/retail/dandy-farmer/"
 
   },
   {
     category: "Fashion Apparel",
     name: "Friend Of A Friend Studio",
-    image: friend
+    image: friend,
+    url: "https://canalstreet.market/retail/friend-of-a-friend-studio/"
 
   },
   {
     category: "Design Objects",
     name: "Leibal",
-    image: leibal
+    image: leibal,
+    url: "https://canalstreet.market/retail/leibal/"
 
   },
   {
     category: "K-Pop Apparel and Merchandisse",
     name: "Mandu Apparel",
-    image: kpop
+    image: kpop,
+    url: "https://canalstreet.market/retail/mandu-apparel/"
 
   },
   {
     category: "Home Goods",
     name: "Mogutable",
-    image: mogutable
+    image: mogutable,
+    url: "https://canalstreet.market/retail/mogutable/"
 
   },
   {
     category: "Jewelry",
     name: "Mottive",
-    image: mottive
+    image: mottive,
+    url: "https://canalstreet.market/retail/tissi/"
 
   },
   {
     category: "Newstand and Magazines",
     name: "Office Magazine Newstand",
-    image: office
+    image: office,
+    url: "https://canalstreet.market/retail/office-magazine-website/"
 
   },
   {
     category: "Fashion APparel",
     name: "Preppy Trendy",
-    image: preppy
+    image: preppy,
+    url: "https://canalstreet.market/retail/preppy-trendy/"
 
   },
   {
     category: "Sunglasses",
     name: "Savage Anchor",
-    image: savage
+    image: savage,
+    url: "https://canalstreet.market/retail/we-were-born-in-2014-and-have-been-growing-ever-since/"
 
   },
   {
     category: "Jewelry",
     name: "Seven 50",
-    image: seven50
+    image: seven50,
+    url: "https://canalstreet.market/retail/seven50/"
 
   },
   {
     category: "Sustainable lifestyle store",
     name: "Siizu",
-    image: siizu
+    image: siizu,
+    url: "https://canalstreet.market/retail/siizu/"
 
   },
   {
     category: "Jewelry",
     name: "Swagychic",
-    image: swagychic
+    image: swagychic,
+    url: "https://canalstreet.market/retail/swagychic/"
 
   },
 ];
