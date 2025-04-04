@@ -1,9 +1,4 @@
 import { useEffect } from "react";
-import CommunityHeader from "../components/communityHeader";
-import Footer from "../components/footer";
-import MarketEvents from "../components/marketEvents";
-import Features from "../components/features";
-import MarketRadio from "../components/marketRadio";
 import MenuOptions from "../components/menuOptions";
 
 
