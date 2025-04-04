@@ -5,11 +5,6 @@ import Community from './pages/Community';
 import Food from './pages/Food';
 import Retail from './pages/RetailMarket';
 import Menu from './pages/Menu';
-import { useState, useEffect } from 'react';
-import Header from './components/aboutHeader';
-import Options from './components/options';
-import logo from './assets/f01b45f7-eb29-4c78-8ddb-e21869cba54c_removalai_preview copy.png'
-import { div } from 'framer-motion/client';
 
 
 function App() {
