@@ -15,29 +15,29 @@ const MenuOptions = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 h-full relative z-0">
             <motion.div onClick={() => handleClick("/about")}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
             transition={{ duration: 0.1, ease: "easeIn"}}
             className="bg-neutral-200 h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">About</motion.div>
             
             <motion.div onClick={() => handleClick("/food")}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
             transition={{ duration: 0.1, ease: "easeIn", delay: 0.1 }}
             className="bg-[#5ea3ec] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Food</motion.div>
             
             <motion.div onClick={() => handleClick("/retail")}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
             transition={{ duration: 0.1, ease: "easeIn", delay: 0.2 }}
             className="bg-[#f64444] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Retail</motion.div>
             
             <motion.div onClick={() => handleClick("/community")}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once
             transition={{ duration: 0.1, ease: "easeIn", delay: 0.3 }}
             className="bg-[#ffb400] h-full md:h-full text-center flex items-center justify-center options-text md:text-4xl text-2xl cursor-pointer">Community</motion.div>
