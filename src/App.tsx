@@ -6,7 +6,7 @@ import Food from './pages/Food';
 import Retail from './pages/RetailMarket';
 import Menu from './pages/Menu';
 import logo from './assets/logo.png';
-import {delay, motion} from 'framer-motion';
+import {motion} from 'framer-motion';
 
 const PANEL_ROUTES: Record<string, string> = {
   home: '/',
