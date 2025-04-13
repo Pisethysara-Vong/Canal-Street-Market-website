@@ -6,6 +6,7 @@ import Food from './pages/Food';
 import Retail from './pages/RetailMarket';
 import Menu from './pages/Menu';
 import logo from './assets/logo.png';
+import {delay, motion} from 'framer-motion';
 
 const PANEL_ROUTES: Record<string, string> = {
   home: '/',
@@ -92,7 +93,12 @@ function AppContent() {
         </div>
 
         {/* Food Panel */}
-        <div
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{     // smooth drop
+          opacity: { duration: 1, ease: "easeOut" },   // synced fade
+        }}
           className={`relative transition-all duration-500 bg-[#5ea3ec] ${activePanel === 'one' ? 'w-[88%] h-screen bg-[#5ea3ec] z-20' : 'w-[4%]'}`}
           onClick={() => handlePanelClick('one')}
         >
@@ -104,10 +110,15 @@ function AppContent() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 tracking-wider options-text text-xl">Food</div>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Retail Panel */}
-        <div
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{     // smooth drop
+          opacity: { duration: 1, ease: "easeOut", delay: 0.3 },   // synced fade
+        }}
           className={`relative transition-all duration-500 bg-[#f64444] ${activePanel === 'two' ? 'w-[88%] h-screen bg-[#f64444] z-30' : 'w-[4%]'}`}
           onClick={() => handlePanelClick('two')}
         >
@@ -119,10 +130,15 @@ function AppContent() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 tracking-wider options-text text-xl">Retail</div>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Community Panel */}
-        <div
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{     // smooth drop
+          opacity: { duration: 1, ease: "easeOut", delay: 0.6 },   // synced fade
+        }}
           className={`relative transition-all duration-500 bg-[#ffb400] ${activePanel === 'three' ? 'w-[88%] h-screen bg-[#ffb400] z-40' : 'w-[4%]'}`}
           onClick={() => handlePanelClick('three')}
         >
@@ -134,7 +150,7 @@ function AppContent() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 tracking-wider options-text text-xl">Community</div>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
