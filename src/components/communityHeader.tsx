@@ -19,7 +19,7 @@ const CommunityHeader = ({ details, title }: CommunityHeaderProps) => {
         whileInView={{ opacity: 1}}
         viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className='flex justify-between items-center fixed w-full lg:pr-28 pr-16'>
+        className='flex justify-between items-center fixed w-full lg:pr-28 pr-16 md:hidden'>
             <div onClick={() => handleClick("/about")} className='w-16 cursor-pointer'>
                 <img src={logo} alt="Logo" />
             </div>

@@ -10,7 +10,7 @@ const Header = () => {
     };
     return (
         <div>
-            <div className='flex justify-between items-center fixed w-full lg:pr-28 pr-16'>
+            <div className='flex justify-between items-center fixed md:w-fit w-full lg:pr-28 pr-16'>
                 <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1}}
@@ -24,14 +24,14 @@ const Header = () => {
                 viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 onClick={() => handleClick("/menu")}
-                className='w-16 hover:bg-neutral-300 rounded-[5px] duration-150 ease-out cursor-pointer' src={sidebar} />
+                className='w-16 hover:bg-neutral-300 rounded-[5px] duration-150 ease-out cursor-pointer md:hidden block' src={sidebar} />
             </div>
             <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1}}
             viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
             transition={{ duration: 0.5, delay: 1 }}
-            className='lg:text-7xl text-4xl mt-68 lg:w-4/5 md:text-justify tracking-normal heading-text'>
+            className='lg:text-7xl text-4xl mt-68 lg:w-auto md:text-left text-justify tracking-normal heading-text'>
                 Canal Street Market is a carefully curate retail market, food hall & community space open year-round at 265 Canal Street. Support <span className='underline decoration-dashed'>Small Business</span> this weekend!
             </motion.div>
             <motion.div

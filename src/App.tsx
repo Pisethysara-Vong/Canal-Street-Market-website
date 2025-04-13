@@ -1,149 +1,151 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import About from './pages/About';
 import Community from './pages/Community';
 import Food from './pages/Food';
 import Retail from './pages/RetailMarket';
 import Menu from './pages/Menu';
+import logo from './assets/logo.png';
 
+const PANEL_ROUTES: Record<string, string> = {
+  home: '/',
+  one: '/food',
+  two: '/retail',
+  three: '/community',
+};
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/about" element={
-          <div className="overflow-x-hidden antialiased selection:bg-black selection:text-white min-h-screen">
-          <div className="box-border h-full w-full m-0 p-0">
-            <About />
-          </div>
-        </div>
-        } />
-        <Route path="/food" element={
-          <div className="overflow-x-hidden antialiased selection:bg-black selection:text-white min-h-screen">
-          <div className="box-border h-full w-full m-0 p-0">
-            <Food />
-          </div>
-        </div>
-        } />
-        <Route path="/retail" element={
-          <div className="overflow-x-hidden antialiased selection:bg-black selection:text-white min-h-screen">
-          <div className="box-border h-full w-full m-0 p-0">
-            <Retail />
-          </div>
-        </div>
-        } />
-        <Route path="/community" element={
-          <div className="overflow-x-hidden antialiased selection:bg-black selection:text-white min-h-screen">
-          <div className="box-border h-full w-full m-0 p-0">
-            <Community />
-          </div>
-        </div>
-        } />
-        <Route path="/menu" element={
-          <div className="overflow-x-hidden antialiased selection:bg-black selection:text-white min-h-screen">
-          <div className="box-border h-full w-full m-0 p-0">
-            <Menu />
-          </div>
-        </div>
-        } />
-        <Route path="/" element={
-          <div className="overflow-x-hidden antialiased selection:bg-black selection:text-white min-h-screen">
-          <div className="box-border h-full w-full m-0 p-0">
-            <About />
-          </div>
-        </div>
-        } />
-      </Routes>
-    </Router>
+const ROUTE_PANELS: Record<string, string> = {
+  '/': 'home',
+  '/about': 'home',
+  '/food': 'one',
+  '/retail': 'two',
+  '/community': 'three',
+};
 
-  );
-  {/*const [activePanel, setActivePanel] = useState<string>('home');
+function AppContent() {
+  const location = useLocation(); {/* get current URL path */}
+  const navigate = useNavigate(); {/* programmatically changes the URL path */}
+  const [isDesktop, setIsDesktop] = useState<boolean>(window.innerWidth >= 1024);
+  const [activePanel, setActivePanel] = useState<string>('home');
 
+  // Handle screen resize
   useEffect(() => {
-    // Add click event listener to each panel
-    const panels = document.querySelectorAll('.panel');
-    panels.forEach((panel) => {
-      panel.addEventListener('click', () => {
-        setActivePanel(panel.id); // Set active panel by ID
-      });
-    });
-
-    // Cleanup event listeners on component unmount
-    return () => {
-      panels.forEach((panel) => {
-        panel.removeEventListener('click', () => {
-          setActivePanel('');
-        });
-      });
+    const handleResize = () => {
+      const isNowDesktop = window.innerWidth >= 1024;
+      setIsDesktop(isNowDesktop);
     };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Sync active panel with route on mount or location change. Runs when from mobile to desktop
+  useEffect(() => {
+    const panel = ROUTE_PANELS[location.pathname]; {/* get the panel corresponding to the current URL path */}
+
+    {/* check if isDesktop is true, if panel returns a usable value, and if the current activePanel is already the same */}
+    if (isDesktop && panel && panel !== activePanel) {
+      setActivePanel(panel);
+    }
+  }, [location.pathname, isDesktop]); {/* dependencies; effect triggered when one or both of these values change */}
+
+  const handlePanelClick = (id: string) => {
+    setActivePanel(id);
+    localStorage.setItem('activePanel', id);
+    window.scrollTo(0, 0);
+    if (isDesktop) {
+      navigate(PANEL_ROUTES[id]); {/* changes the current URL path on desktop to corresponding panel */}
+    }
+  };
+
+  if (!isDesktop) {
+    return (
+      <Routes>
+        <Route path="/" element={<div className="box-border h-screen w-full m-0 p-0"><About /></div>} />
+        <Route path="/about" element={<div className="box-border h-screen w-full m-0 p-0"><About /></div>} />
+        <Route path="/food" element={<div className="box-border h-screen w-full m-0 p-0"><Food /></div>} />
+        <Route path="/retail" element={<div className="box-border h-screen w-full m-0 p-0"><Retail /></div>} />
+        <Route path="/community" element={<div className="box-border h-screen w-full m-0 p-0"><Community /></div>} />
+        <Route path="/menu" element={<div className="box-border h-screen w-full m-0 p-0"><Menu /></div>} />
+      </Routes>
+    );
+  }
+
+  // Desktop view
   return (
-    <div className="box-border h-full w-full m-0 p-0">
-      <div className="flex flex-wrap h-screen">
-        <div id="home" className={`panel relative flex cursor-pointer transition-all duration-500 bg-white z-10 ${
-            activePanel === 'home' ? 'w-[88%] left-0' : 'w-[4%] left-0'}`}>
-          {activePanel === 'home' ? (
-                <>
-                  <About />
-                </>
-              ) : (
-                <div className='w-16 h-fit mt-15 px-0.5 border-2 border-green-500 flex justify-center '>
-                  <img className="w-full" src={logo} alt="Logo" />
-                </div>
-                
-              )}
-        </div>
+    <div className="relative h-full w-full m-0 p-0 overflow-x-hidden selection:bg-black selection:text-white">
+      <div className="lg:flex w-full h-full hidden">
+        {/* Home Panel */}
         <div
-          id="one"
-          className={`panel relative flex flex-col items-center justify-center min-h-full cursor-pointer transition-all duration-500 bg-red-500 z-[75] ${
-            activePanel === 'one' ? 'w-[88%] left-0' : 'w-[4%] left-0'
-          }`}
+          className={`relative transition-all duration-500 ${activePanel === 'home' ? 'w-[88%] h-screen z-10 bg-white' : 'w-[4%]'}`}
+          onClick={() => handlePanelClick('home')}
+        >
+          {activePanel === 'home' ? (
+            <div className="scrollable h-full">
+              <About />
+            </div>
+          ) : (
+            <div className="w-16 h-fit mt-16 px-0.5 flex justify-center">
+              <img className="w-full" src={logo} alt="Logo" />
+            </div>
+          )}
+        </div>
+
+        {/* Food Panel */}
+        <div
+          className={`relative transition-all duration-500 bg-[#5ea3ec] ${activePanel === 'one' ? 'w-[88%] h-screen bg-[#5ea3ec] z-20' : 'w-[4%]'}`}
+          onClick={() => handlePanelClick('one')}
         >
           {activePanel === 'one' ? (
-                <>
-                  <About />
-                </>
-              ) : (
-                <p className="transform rotate-90">ONE</p>
-              )}
-          
+            <div className="scrollable h-full"><Food /></div>
+          ) : (
+            <div className="h-full relative text-black">
+              <div className="flex h-1/2 items-center justify-center w-full text-center text-sm">餐饮</div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 tracking-wider options-text text-xl">Food</div>
+            </div>
+          )}
         </div>
 
+        {/* Retail Panel */}
         <div
-          id="two"
-          className={`panel relative flex flex-col items-center justify-center min-h-full cursor-pointer transition-all duration-500 bg-purple-500 z-[50] ${
-            activePanel === 'two' ? 'w-[88%] left-0' : 'w-[4%] left-0'
-          }`}
+          className={`relative transition-all duration-500 bg-[#f64444] ${activePanel === 'two' ? 'w-[88%] h-screen bg-[#f64444] z-30' : 'w-[4%]'}`}
+          onClick={() => handlePanelClick('two')}
         >
           {activePanel === 'two' ? (
-                <>
-                  <About />
-                </>
-              ) : (
-                <p className="transform rotate-90">ONE</p>
-              )}
+            <div className="scrollable h-full"><Retail /></div>
+          ) : (
+            <div className="h-full relative text-black">
+              <div className="flex h-1/2 items-center justify-center w-full text-center text-sm">购物</div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 tracking-wider options-text text-xl">Retail</div>
+            </div>
+          )}
         </div>
 
+        {/* Community Panel */}
         <div
-          id="three"
-          className={`panel relative flex flex-col items-center justify-center min-h-full cursor-pointer transition-all duration-500 bg-orange-500 z-[25] ${
-            activePanel === 'three' ? 'w-[88%] left-0' : 'w-[4%] left-0'
-          }`}
+          className={`relative transition-all duration-500 bg-[#ffb400] ${activePanel === 'three' ? 'w-[88%] h-screen bg-[#ffb400] z-40' : 'w-[4%]'}`}
+          onClick={() => handlePanelClick('three')}
         >
           {activePanel === 'three' ? (
-                <>
-                  <About />
-                </>
-              ) : (
-                <p className="transform rotate-90">ONE</p>
-              )}
+            <div className="scrollable h-full"><Community /></div>
+          ) : (
+            <div className="h-full relative text-black">
+              <div className="flex h-1/2 items-center justify-center w-full text-center text-sm">文化</div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 tracking-wider options-text text-xl">Community</div>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-  */}
 }
 
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
 
 export default App;
