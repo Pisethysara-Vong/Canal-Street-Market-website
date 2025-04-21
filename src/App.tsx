@@ -52,7 +52,6 @@ function AppContent() {
 
   const handlePanelClick = (id: string) => {
     setActivePanel(id);
-    localStorage.setItem('activePanel', id);
     window.scrollTo(0, 0);
     if (isDesktop) {
       navigate(PANEL_ROUTES[id]); {/* changes the current URL path on desktop to corresponding panel */}
