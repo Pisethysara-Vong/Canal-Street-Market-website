@@ -7,6 +7,7 @@ import Retail from './pages/RetailMarket';
 import Menu from './pages/Menu';
 import logo from './assets/logo.png';
 import {motion} from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 
 const PANEL_ROUTES: Record<string, string> = {
   home: '/',
@@ -157,9 +158,12 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <>
+      <Router>
+        <AppContent />
+      </Router>
+      <Analytics />
+    </>
   );
 }
 
