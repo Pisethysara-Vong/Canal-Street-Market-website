@@ -18,7 +18,6 @@ const PANEL_ROUTES: Record<string, string> = {
 
 const ROUTE_PANELS: Record<string, string> = {
   '/': 'home',
-  '/about': 'home',
   '/food': 'one',
   '/retail': 'two',
   '/community': 'three',
@@ -63,7 +62,6 @@ function AppContent() {
     return (
       <Routes>
         <Route path="/" element={<div className="box-border h-screen w-full m-0 p-0"><About /></div>} />
-        <Route path="/about" element={<div className="box-border h-screen w-full m-0 p-0"><About /></div>} />
         <Route path="/food" element={<div className="box-border h-screen w-full m-0 p-0"><Food /></div>} />
         <Route path="/retail" element={<div className="box-border h-screen w-full m-0 p-0"><Retail /></div>} />
         <Route path="/community" element={<div className="box-border h-screen w-full m-0 p-0"><Community /></div>} />
@@ -78,7 +76,7 @@ function AppContent() {
       <div className="lg:flex w-full h-full hidden">
         {/* Home Panel */}
         <div
-          className={`relative transition-all duration-500 ${activePanel === 'home' ? 'w-[88%] h-screen z-10 bg-white' : 'w-[4%]'}`}
+          className={`relative transition-all duration-500 ${activePanel === 'home' ? 'w-[88%] h-screen z-10 bg-white' : 'w-[4%] cursor-pointer'}`}
           onClick={() => handlePanelClick('home')}
         >
           {activePanel === 'home' ? (
@@ -99,7 +97,7 @@ function AppContent() {
         transition={{     // smooth drop
           opacity: { duration: 1, ease: "easeOut" },   // synced fade
         }}
-          className={`relative transition-all duration-500 bg-[#5ea3ec] ${activePanel === 'one' ? 'w-[88%] h-screen bg-[#5ea3ec] z-20' : 'w-[4%]'}`}
+          className={`relative transition-all duration-500 bg-[#5ea3ec] ${activePanel === 'one' ? 'w-[88%] h-screen bg-[#5ea3ec] z-20' : 'w-[4%] cursor-pointer'}`}
           onClick={() => handlePanelClick('one')}
         >
           {activePanel === 'one' ? (
@@ -119,7 +117,7 @@ function AppContent() {
         transition={{     // smooth drop
           opacity: { duration: 1, ease: "easeOut", delay: 0.3 },   // synced fade
         }}
-          className={`relative transition-all duration-500 bg-[#f64444] ${activePanel === 'two' ? 'w-[88%] h-screen bg-[#f64444] z-30' : 'w-[4%]'}`}
+          className={`relative transition-all duration-500 bg-[#f64444] ${activePanel === 'two' ? 'w-[88%] h-screen bg-[#f64444] z-30' : 'w-[4%] cursor-pointer'}`}
           onClick={() => handlePanelClick('two')}
         >
           {activePanel === 'two' ? (
@@ -139,7 +137,7 @@ function AppContent() {
         transition={{     // smooth drop
           opacity: { duration: 1, ease: "easeOut", delay: 0.6 },   // synced fade
         }}
-          className={`relative transition-all duration-500 bg-[#ffb400] ${activePanel === 'three' ? 'w-[88%] h-screen bg-[#ffb400] z-40' : 'w-[4%]'}`}
+          className={`relative transition-all duration-500 bg-[#ffb400] ${activePanel === 'three' ? 'w-[88%] h-screen bg-[#ffb400] z-40' : 'w-[4%] cursor-pointer'}`}
           onClick={() => handlePanelClick('three')}
         >
           {activePanel === 'three' ? (

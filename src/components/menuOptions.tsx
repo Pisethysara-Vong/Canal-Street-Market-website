@@ -14,7 +14,7 @@ const MenuOptions = () => {
             <img src={exit} alt="Logo" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 h-full relative z-0">
-            <motion.div onClick={() => handleClick("/about")}
+            <motion.div onClick={() => handleClick("/")}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0}}
             viewport={{ once: true }} // `once: true` ensures it only triggers once

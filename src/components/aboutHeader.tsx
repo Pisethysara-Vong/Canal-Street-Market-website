@@ -16,7 +16,7 @@ const Header = () => {
                 whileInView={{ opacity: 1}}
                 viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
                 transition={{ duration: 1, ease: "easeOut" }}
-                onClick={() => handleClick("/about")}
+                onClick={() => handleClick("/")}
                 className='w-16 cursor-pointer' src={logo} />
                 <motion.img
                 initial={{ opacity: 0 }}

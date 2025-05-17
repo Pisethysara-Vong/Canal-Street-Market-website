@@ -24,7 +24,7 @@ const FoodHeader = ({ hours, schedule, title, image, bgHover }: FoodHeaderProps)
         viewport={{ once: true, amount: 0.5 }} // `once: true` ensures it only triggers once
         transition={{ duration: 0.5, ease: "easeOut" }}
         className='flex justify-between items-center fixed w-full lg:pr-28 pr-16 z-10 md:hidden'>
-            <div onClick={() => handleClick("/about")} className='w-16 cursor-pointer'>
+            <div onClick={() => handleClick("/")} className='w-16 cursor-pointer'>
                 <img src={logo} alt="Logo" />
             </div>
             <div onClick={() => handleClick("/menu")} className={classNames("w-16 rounded-[5px] duration-150 ease-out cursor-pointer", bgHover)}>
